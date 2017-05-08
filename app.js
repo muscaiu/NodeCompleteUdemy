@@ -10,7 +10,7 @@ const notes = require('./notes.js')
 //argv is the option used running node 
 //Ex: node app.js add --title=secrets --body="This is my secret"
 const argv = yargs.argv
-var command = process.argv[2]
+var command = argv._[0] //_ is not lodash but the array of objects in argv
 console.log('Command:', command)
 console.log('Yargs:', argv)
 
