@@ -1,7 +1,4 @@
-console.log('Starting app.js')
-
 const fs = require('fs')
-const _ = require('lodash')
 const yargs = require('yargs')
 
 const notes = require('./notes.js')
@@ -11,8 +8,8 @@ const notes = require('./notes.js')
 //Ex: node app.js add --title=secrets --body="This is my secret"
 const argv = yargs.argv
 var command = argv._[0] //_ is not lodash but the array of objects in argv
-console.log('Command:', command)
-console.log('Yargs:', argv)
+    // console.log('Command:', command)
+    // console.log('Yargs:', argv)
 
 if (command === 'add') {
     notes.addNote(argv.title, argv.body)
