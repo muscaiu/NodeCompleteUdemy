@@ -29,8 +29,7 @@ var addNote = (title, body) => {
     if (duplicateNotes.length === 0) {
         notes.push(note)
         saveNotes(notes)
-    } else {
-        console.log('Note already exists')
+        return note
     }
 }
 
@@ -39,11 +38,19 @@ var getAll = () => {
 }
 
 var getNote = (title) => {
-    console.log('Getting note', title)
+    var notes = fetchNotes()
+        // var filterNotes = notes.filter((note) => {
+        //     return note.title === title
+        // })
+    var filterNotes = notes.filter((note) => note.title === title) //es same as above
+    return filterNotes[0]
 }
 
 var removeNote = (title) => {
-    console.log('Removing note', title)
+    var notes = fetchNotes()
+    var filterNotes = notes.filter((note) => note.title != title)
+    saveNotes(filterNotes)
+    return notes.length !== filterNotes.length
 }
 
 module.exports = {
