@@ -53,6 +53,13 @@ var removeNote = (title) => {
     return notes.length !== filterNotes.length
 }
 
+var logNote = (note) => {
+    debugger
+    console.log('--')
+    console.log(`Title: ${note.title}`)
+    console.log(`Body: ${note.body}`)
+}
+
 module.exports = {
     //in es6 identical to addNote : addNote (if obj key same name as obj property)
     addNote,
@@ -60,6 +67,7 @@ module.exports = {
     getAll: getAll,
     getNote: getNote,
     removeNote: removeNote,
+    logNote: logNote
 }
 
 
